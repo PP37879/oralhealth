@@ -15,6 +15,7 @@ export class InsertService {
   constructor(private http: Http) { }
   insertUser(user:Dentist):Observable<boolean>{
     let url = 'oralhealthstatuscheck.com/register.php';
+    console.log(url);
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}) };
     return this.http.post(url, user, header).map((res: Response) => { return this.parsein(res)}).catch((error: any) => { 
       console.log(error);
