@@ -12,7 +12,7 @@ export class DataService {
   convertExcelToJson(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3000/excel/file',{headers:headers})
+    return this.http.get('https://stormy-garden-32587.herokuapp.com/excel/file',{headers:headers})
     .map(res => res.json());
   }
 }
