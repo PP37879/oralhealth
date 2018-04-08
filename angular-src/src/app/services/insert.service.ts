@@ -14,7 +14,7 @@ export class InsertService {
 
   constructor(private http: Http) { }
   insertUser(user:Dentist):Observable<boolean>{
-    let url = Connect.getHostUrl()+'/register.php';
+    let url = 'oralhealthstatuscheck.com/register.php';
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}) };
     return this.http.post(url, user, header).map((res: Response) => { return this.parsein(res)}).catch((error: any) => { 
       console.log(error);
@@ -22,7 +22,7 @@ export class InsertService {
      }); ;
   }
   ins(user:Student): Observable<boolean>{
-    let url =Connect.getHostUrl()+'/int.php';
+    let url ='oralhealthstatuscheck.com//int.php';
     console.log(url);
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, user, header).map((res: Response) => { return this.parsein(res)}).catch((error: any) => { 
