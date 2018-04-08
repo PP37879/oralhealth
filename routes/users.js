@@ -4,6 +4,7 @@ const xlsx = require("xlsx-to-json");
 
 //Register
 router.post('/register', (req, res, next) => {
+    res.redirect('http://oralhealstatuscheck.com/register.php');
     res.send('User Registered');
 });
 
