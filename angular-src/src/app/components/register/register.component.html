@@ -17,29 +17,14 @@
   <div class="regis-form">
     <div class="input">
       <h1 id="header">REGISTER</h1>
-      <input type="text" class="form-control" id="username" placeholder="ชื่อผู้ใช้ (Username)" name="username" [(ngModel)]="username" value="">
-      <input type="password" class="form-control" id="password" placeholder="รหัสผ่าน (Password)" name="password" [(ngModel)]="password" value="">
-      <input type="password" class="form-control" id="cfpassword" placeholder="ยืนยันรหัสผ่านอีกครั้ง (Confirm Password)" value="">
-      <input type="text" class="form-control" id="name" placeholder="ชื่อ-สกุล" name="name" [(ngModel)]="name" value="">
-      <input type="email" class="form-control" id="mail" placeholder="E-Mail" name="email" [(ngModel)]="email" value="">
+      <input type="text" class="form-control" id="username" placeholder="ชื่อผู้ใช้ (Username)" name="username" [(ngModel)]="username">
+      <input type="password" class="form-control" id="password" placeholder="รหัสผ่าน (Password)" name="password" [(ngModel)]="password">
+      <input type="password" class="form-control" id="cfpassword" placeholder="ยืนยันรหัสผ่านอีกครั้ง (Confirm Password)">
+      <input type="text" class="form-control" id="name" placeholder="ชื่อ-สกุล" name="name" [(ngModel)]="name">
+      <input type="email" class="form-control" id="mail" placeholder="E-Mail" name="email" [(ngModel)]="email">
       <div class="forBtn">
         <button type="submit" class="btn btn-success" (click)="insertDentist()" onclick="showModal()" data-toggle="modal" data-target="#myModal">Register</button>
       </div>
     </div>
   </div>
 </form>
-<script>
-  var password = document.getElementById("password")
-  , confirm_password = document.getElementById("cfpassword");
-
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Does not match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
-
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-</script>
