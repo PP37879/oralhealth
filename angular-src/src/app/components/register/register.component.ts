@@ -38,19 +38,19 @@ export class RegisterComponent implements OnInit {
        name : this.name,
        email : this.email
      }
-     if(!this.validateService.validateRegister(user)){
-       console.log("All field must be filled");
-       return false;
-     }
-     if(!this.validateService.validatePassword(this.password)){
-       console.log("Password must be 8 or more characters");
-       return false;
-     }
-     if(!this.validateService.validateEmail(this.email)){
-       console.log("Please input appropriate email");
-       return false;
-     }
-     console.log(this.confirmPassword);
+    //  if(!this.validateService.validateRegister(user)){
+    //    console.log("All field must be filled");
+    //    return false;
+    //  }
+    //  if(!this.validateService.validatePassword(this.password)){
+    //    console.log("Password must be 8 or more characters");
+    //    return false;
+    //  }
+    //  if(!this.validateService.validateEmail(this.email)){
+    //    console.log("Please input appropriate email");
+    //    return false;
+    //  }
+    //  console.log(this.confirmPassword);
      this.add();
    }
 
