@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="assets/img/success.png" style="width:100px; height:100px;">
+        <p>สมัครสมาชิกเรียบร้อย</p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<form class="signup">
+  <div class="regis-form">
+    <div class="input">
+      <h1 id="header">REGISTER</h1>
+      <input type="text" class="form-control" id="username" placeholder="ชื่อผู้ใช้ (Username)" name="username" [(ngModel)]="username" value="">
+      <input type="password" class="form-control" id="password" placeholder="รหัสผ่าน (Password)" name="password" [(ngModel)]="password" value="">
+      <input type="password" class="form-control" id="cfpassword" placeholder="ยืนยันรหัสผ่านอีกครั้ง (Confirm Password)" [(ngModel)]="confirmPassword" value="">
+      <input type="text" class="form-control" id="name" placeholder="ชื่อ-สกุล" name="name" [(ngModel)]="name" value="">
+      <input type="email" class="form-control" id="mail" placeholder="E-Mail" name="email" [(ngModel)]="email" value="">
+      <div class="forBtn">
+        <button type="submit" class="btn btn-success" (click)="insertDentist()" onclick="showModal()" data-toggle="modal" data-target="#myModal">Register</button>
+      </div>
+    </div>
+  </div>
+</form>
+<script>
+  var password = document.getElementById("password")
+  , confirm_password = document.getElementById("cfpassword");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Does not match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
+
+'mysql://b2c39c6d62116e:eb347b5d@us-cdbr-iron-east-05.cleardb.net/heroku_998742f4c0572bc?reconnect=true'
