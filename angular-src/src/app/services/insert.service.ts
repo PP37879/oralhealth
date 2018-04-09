@@ -16,7 +16,6 @@ export class InsertService {
   insertUser(user:Dentist):Observable<boolean>{
     let url = Connect.getHostUrl()+'/register.php';
     console.log(url);
-    url = url.replace('http://','https://');
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}) };
     return this.http.post(url, user, header).map((res: Response) => { return this.parsein(res)}).catch((error: any) => { 
       console.log(error);
