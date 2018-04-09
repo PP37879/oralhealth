@@ -60,6 +60,7 @@ const appRoutes : Routes = [
   providers: [
     InsertService,
     ValidateService
+    
    
   ],
   bootstrap: [AppComponent]
