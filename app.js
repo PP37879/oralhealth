@@ -33,35 +33,16 @@ app.use(bodyParser.json());
 //Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use('local',new LocalStrategy({
-    usernameField : 'username',
-    passwordField : 'password',
-    passReqToCallback : true
-},function(req,username,password,done){
-    var salt = '7fa73b47df808d36c5fe328546ddef8b9011b2c6';
-    connection.query("select DEN_USERNAME from dentist where DEN_USERNAME = ?",[username],function(err,rows){
-        if(err) return done(null,false);
-        if(!rows.length){
-            return done(null,false);
-        }
-        salt = salt+''+password;
-        var encodePassword = crypto.createHash('sha1').update(salt).digest('hex');
-        var dbPassword = rows[0].DEN_PASSWORD;
-        if(dbPassword !== encodePassword){
-            console.log("Password does not match");
-            return done(null,false);
-        }
-        return done(null,rows[0]);
-    })
-}));
-
-
 app.use("/",index);
 
 
 //Index Route
 app.get('/', (req, res) => {
-    res.send('Invalid Endpoint');
+    if (/\/[^.]*$/.test(req.url)) {
+        res.sendfile(__dirname + '/public/index.html');
+    } else {
+        next();
+    }
 });
 
 //start server

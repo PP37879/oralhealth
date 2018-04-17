@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth|Delius+Unicase:700|Exo:700|Londrina+Solid|Oleo+Script|Ubuntu:700|Vast+Shadow|Viga');
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Francois+One|Roboto:500,700');
-.login-form{
+.form-group{
     text-align: center;
     /* font-family: 'Delius Unicase', cursive; */
     font-family: 'Open Sans', sans-serif;

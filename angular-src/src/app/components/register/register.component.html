@@ -1,16 +1,6 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-sm">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-body">
-        <img src="assets/img/success.png" style="width:100px; height:100px;">
-        <p>สมัครสมาชิกเรียบร้อย</p>
-
-      </div>
-    </div>
-
   </div>
 </div>
 <form class="signup">
@@ -23,7 +13,7 @@
       <input type="text" class="form-control" id="name" placeholder="ชื่อ-สกุล" name="name" [(ngModel)]="name">
       <input type="email" class="form-control" id="mail" placeholder="E-Mail" name="email" [(ngModel)]="email">
       <div class="forBtn">
-        <button type="submit" class="btn btn-success" (click)="insertDentist()" onclick="showModal()" data-toggle="modal" data-target="#myModal">Register</button>
+        <button type="submit" class="btn btn-success" (click)="insertDentist()">Register</button>
       </div>
     </div>
   </div>

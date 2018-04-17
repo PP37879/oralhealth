@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { InsertService } from '../../services/insert.service';
 import {ValidateService} from '../../services/validate.service';
 import {Dentist} from '../../model/dentist';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-register',
@@ -24,6 +25,8 @@ export class RegisterComponent implements OnInit {
      this.int.insertUser(this.dent).subscribe(
       response =>{
         if (response==true) {
+          this.flashMessage.show('User created successfully',{cssClass:'alert-success',timeout:3000});
+          this.router.navigate(['/login']);
         } else {
         }
       })
@@ -40,7 +43,10 @@ export class RegisterComponent implements OnInit {
      this.add();
    }
 
-   constructor(private int:InsertService, private validateService:ValidateService) {
+   constructor(private int:InsertService, 
+    private validateService:ValidateService, 
+    private flashMessage:FlashMessagesService,
+    private router: Router) {
     this.dent=new Dentist();
    }
 

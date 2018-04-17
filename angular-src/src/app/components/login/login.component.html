@@ -1,16 +1,16 @@
-<form class="signin">
+<form class="login">
   <div class="logo">
     <img src="assets/img/logo.png">
   </div>
-  <div class="login-form">
+  <div class="form-group">
     <div class="input">
     <h1 id="header">LogIn</h1>
 
-      <input type="text" class="form-control" id="usr" placeholder="Username">
-      <input type="password" class="form-control" id="pass" placeholder="Password">
+      <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" name="username">
+      <input type="password" class="form-control"placeholder="Password" [(ngModel)]="password" name="password">
 
       <div class="forBtn">
-        <button type="submit" class="btn btn-success" [routerLink]="['/menu']" onclick="success()">Login</button>
+        <button type="submit" class="btn btn-success" (click)="onLoginSubmit()">Login</button>
       </div>
     </div>
   </div>

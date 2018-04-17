@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FileComponent } from './components/file/file.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlashMessagesModule} from 'angular2-flash-messages';
 
 
 import {ValidateService} from './services/validate.service';
@@ -55,13 +56,12 @@ const appRoutes : Routes = [
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule.forRoot()
   ],
   providers: [
     InsertService,
     ValidateService
-    
-   
   ],
   bootstrap: [AppComponent]
 })
